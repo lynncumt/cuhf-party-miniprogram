@@ -1,0 +1,87 @@
+<!-- 联系我们 -->
+<view class="container">
+
+  <view class="top-banner">
+    <view class="top-title">协力同心强党建</view>
+    <view class="top-subtitle">校企同频谱新篇</view>
+    <view class="top-desc">校企党建互助共建促发展，请联系我们</view>
+  </view>
+
+  <view class="form-card">
+    <view class="form-section-title">为了精准互助共建，请勾选贵司党建思政需求（可多选）：</view>
+
+    <!-- 五大类需求 -->
+    <view class="need-category" wx:for="{{needCategories}}" wx:key="id" wx:for-item="cat">
+      <view class="cat-header">
+        <view class="cat-num-badge">{{cat.roman}}</view>
+        <view class="cat-name">{{cat.title}}</view>
+      </view>
+      <view class="cat-items">
+        <view
+          class="check-item {{item.checked ? 'checked' : ''}}"
+          wx:for="{{cat.items}}"
+          wx:key="index"
+          wx:for-item="item"
+          bindtap="toggleNeed"
+          data-cat-index="{{index}}"
+          data-item-index="{{index}}"
+          data-cat-id="{{cat.id}}"
+          data-item-id="{{item.id}}"
+        >
+          <view class="checkbox {{item.checked ? 'checkbox-checked' : ''}}">
+            <text wx:if="{{item.checked}}">✓</text>
+          </view>
+          <text class="check-label">{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 企业信息 -->
+  <view class="form-card">
+    <view class="form-section-title">请告知您的信息</view>
+
+    <view class="form-row">
+      <view class="form-label"><text class="required">*</text>企业名称</view>
+      <input class="form-input" placeholder="请输入企业全称" value="{{form.companyName}}" bindinput="onInput" data-field="companyName" maxlength="50" />
+    </view>
+
+    <view class="form-row">
+      <view class="form-label"><text class="required">*</text>联系人</view>
+      <input class="form-input" placeholder="请输入联系人姓名" value="{{form.contactName}}" bindinput="onInput" data-field="contactName" maxlength="20" />
+    </view>
+
+    <view class="form-row">
+      <view class="form-label"><text class="required">*</text>联系电话</view>
+      <input class="form-input" type="number" placeholder="请输入联系电话" value="{{form.phone}}" bindinput="onInput" data-field="phone" maxlength="11" />
+    </view>
+
+    <view class="form-row">
+      <view class="form-label">职务</view>
+      <input class="form-input" placeholder="请输入您的职务" value="{{form.position}}" bindinput="onInput" data-field="position" maxlength="20" />
+    </view>
+
+    <view class="form-row">
+      <view class="form-label">企业规模</view>
+      <picker bindchange="onPickerChange" value="{{scaleIndex}}" range="{{scaleOptions}}" data-field="scale">
+        <view class="picker-view">
+          {{form.scale || '请选择企业规模'}}
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-row form-row-textarea">
+      <view class="form-label">补充说明</view>
+      <textarea class="form-textarea" placeholder="请描述您的党建需求或其他说明..." value="{{form.remark}}" bindinput="onInput" data-field="remark" maxlength="200"></textarea>
+      <view class="char-count">{{form.remark.length || 0}}/200</view>
+    </view>
+  </view>
+
+  <button class="submit-btn {{submitting ? 'submitting' : ''}}" bindtap="submitForm" disabled="{{submitting}}">
+    {{submitting ? '提交中...' : '提交需求'}}
+  </button>
+
+  <view class="tip-text">提交后，合肥城市学院党建工作团队将尽快与您联系</view>
+
+</view>

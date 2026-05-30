@@ -1,0 +1,93 @@
+.school-banner {
+  width: 100%;
+  height: 360rpx;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  object-fit: cover;
+}
+
+.placeholder-banner {
+  width: 100%;
+  height: 360rpx;
+  background: linear-gradient(135deg, #CC0000, #FF6666);
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.rich-content {
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 1.8;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #CC0000;
+  margin: 20rpx 0 12rpx;
+  padding-left: 16rpx;
+  border-left: 6rpx solid #CC0000;
+}
+
+.college-list {
+  background: #ffffff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+  margin-bottom: 20rpx;
+}
+
+.college-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.college-item:last-child {
+  border-bottom: none;
+}
+
+.college-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  background: #FFF0F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.college-icon {
+  font-size: 40rpx;
+}
+
+.college-info {
+  flex: 1;
+}
+
+.college-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 6rpx;
+}
+
+.college-desc {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.arrow {
+  color: #CCCCCC;
+  font-size: 40rpx;
+  font-weight: 300;
+  margin-left: 10rpx;
+}

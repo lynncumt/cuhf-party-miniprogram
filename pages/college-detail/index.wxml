@@ -1,0 +1,27 @@
+<!-- 学院详情 -->
+<view class="container">
+  <view class="card">
+    <view class="page-title">{{collegeName}}</view>
+    <image class="college-banner" src="{{college.bannerImage || ''}}" mode="aspectFill" wx:if="{{college.bannerImage}}"></image>
+    <view class="college-banner-placeholder" wx:else>
+      <text>{{collegeName}}</text>
+    </view>
+    <rich-text nodes="{{college.content || defaultContent}}" class="rich-content"></rich-text>
+  </view>
+
+  <view class="section-title">所含专业</view>
+  <view class="major-list">
+    <view class="major-item" wx:for="{{college.majors || defaultMajors}}" wx:key="index">
+      <view class="major-dot"></view>
+      <text class="major-name">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section-title" wx:if="{{college.departments && college.departments.length > 0}}">各系介绍</view>
+  <view class="dept-list" wx:if="{{college.departments && college.departments.length > 0}}">
+    <view class="dept-item" wx:for="{{college.departments}}" wx:key="index">
+      <view class="dept-name">{{item.name}}</view>
+      <view class="dept-desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>

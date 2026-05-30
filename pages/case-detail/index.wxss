@@ -1,0 +1,9 @@
+.loading { text-align: center; padding: 60rpx; color: #999; font-size: 28rpx; }
+.cover-img { width: 100%; height: 360rpx; object-fit: cover; border-radius: 0 0 20rpx 20rpx; margin-bottom: 20rpx; }
+.meta-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16rpx; flex-wrap: wrap; gap: 8rpx; }
+.date { font-size: 24rpx; color: #999; }
+.tags { display: flex; flex-wrap: wrap; gap: 8rpx; }
+.tag { background: #FFF0F0; color: #CC0000; border: 1rpx solid #FFCCCC; border-radius: 6rpx; padding: 4rpx 12rpx; font-size: 20rpx; }
+.case-title { font-size: 36rpx; font-weight: bold; color: #222; line-height: 1.5; margin-bottom: 20rpx; }
+.divider { height: 2rpx; background: #F0F0F0; margin-bottom: 20rpx; }
+.rich-content { font-size: 30rpx; color: #444; line-height: 1.9; }

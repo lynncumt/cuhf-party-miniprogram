@@ -1,0 +1,61 @@
+<!-- 首页 -->
+<view class="index-page">
+
+  <!-- 顶部 Banner -->
+  <view class="banner">
+    <view class="banner-content">
+      <view class="banner-title">合肥城市学院</view>
+      <view class="banner-subtitle">校企党建互助平台</view>
+      <view class="banner-slogan">协力同心强党建  校企同频谱新篇</view>
+    </view>
+    <view class="banner-emblem">党</view>
+  </view>
+
+  <!-- 合城动态滚动栏 -->
+  <view class="news-ticker">
+    <view class="news-ticker-label">合城动态</view>
+    <swiper class="news-swiper" autoplay="{{true}}" interval="3000" vertical="{{true}}" circular="{{true}}">
+      <swiper-item wx:for="{{newsList}}" wx:key="index">
+        <view class="news-swiper-item" bindtap="goToCase" data-id="{{item._id}}">{{item.title}}</view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 7大主要功能模块 -->
+  <view class="module-grid">
+    <view class="module-card" bindtap="goToPage" data-path="/pages/school-overview/index">
+      <view class="module-icon school-icon">🏫</view>
+      <view class="module-name">学校概况</view>
+    </view>
+    <view class="module-card" bindtap="goToPage" data-path="/pages/party-intro/index">
+      <view class="module-icon party-icon">🤝</view>
+      <view class="module-name">校企党建互助简介</view>
+    </view>
+    <view class="module-card" bindtap="goToPage" data-path="/pages/party-resources/index">
+      <view class="module-icon resource-icon">📚</view>
+      <view class="module-name">学校党建思政资源</view>
+    </view>
+    <view class="module-card" bindtap="goToPage" data-path="/pages/expert-db/index">
+      <view class="module-icon expert-icon">👨‍🏫</view>
+      <view class="module-name">党建思政专家库</view>
+    </view>
+    <view class="module-card" bindtap="goToPage" data-path="/pages/course-db/index">
+      <view class="module-icon course-icon">🎓</view>
+      <view class="module-name">党建思政精品课程库</view>
+    </view>
+    <view class="module-card" bindtap="goToPage" data-path="/pages/cases/index">
+      <view class="module-icon case-icon">📋</view>
+      <view class="module-name">校企党建互助案例采撷</view>
+    </view>
+    <view class="module-card module-card-full" bindtap="goToPage" data-path="/pages/contact/index">
+      <view class="module-icon contact-icon">📞</view>
+      <view class="module-name">党建互助 · 联系我们</view>
+    </view>
+  </view>
+
+  <!-- 底部说明 -->
+  <view class="footer-note">
+    <text>合肥城市学院 校企党建互助平台</text>
+  </view>
+
+</view>

@@ -1,0 +1,22 @@
+<!-- 学校党建思政资源 -->
+<view class="container">
+
+  <view class="header-card">
+    <view class="header-title">党建资源</view>
+    <rich-text nodes="{{intro || defaultIntro}}" class="rich-content"></rich-text>
+  </view>
+
+  <view class="resource-section" wx:for="{{resources}}" wx:key="id">
+    <view class="resource-header">
+      <view class="resource-icon">{{item.icon}}</view>
+      <view class="resource-title">{{item.title}}</view>
+    </view>
+    <view class="resource-body">
+      <rich-text nodes="{{item.content}}" class="rich-content"></rich-text>
+      <view class="resource-tags">
+        <view class="tag" wx:for="{{item.tags}}" wx:key="index" wx:for-item="tag">{{tag}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

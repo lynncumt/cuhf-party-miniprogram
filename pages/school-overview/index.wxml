@@ -1,0 +1,36 @@
+<!-- 学校概况 -->
+<view class="container">
+
+  <!-- 学校简介 -->
+  <view class="card">
+    <view class="page-title">合肥城市学院简况</view>
+    <image class="school-banner" src="{{overview.bannerImage || ''}}" mode="aspectFill" wx:if="{{overview.bannerImage}}"></image>
+    <view class="school-banner placeholder-banner" wx:else>
+      <text>学校风景图</text>
+    </view>
+    <rich-text nodes="{{overview.content || defaultContent}}" class="rich-content"></rich-text>
+  </view>
+
+  <!-- 二级学院 -->
+  <view class="section-title">二级学院</view>
+  <view class="college-list">
+    <view
+      class="college-item"
+      wx:for="{{colleges}}"
+      wx:key="id"
+      bindtap="goToCollegeDetail"
+      data-id="{{item.id}}"
+      data-name="{{item.name}}"
+    >
+      <view class="college-icon-wrap">
+        <text class="college-icon">{{item.icon}}</text>
+      </view>
+      <view class="college-info">
+        <view class="college-name">{{item.name}}</view>
+        <view class="college-desc">{{item.desc}}</view>
+      </view>
+      <view class="arrow">›</view>
+    </view>
+  </view>
+
+</view>

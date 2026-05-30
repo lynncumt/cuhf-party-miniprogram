@@ -1,0 +1,55 @@
+<!-- 视见合城 -->
+<view class="container">
+
+  <view class="video-header">
+    <view class="video-title">🎬 视见合城</view>
+    <view class="video-desc">合肥城市学院宣传视频合集</view>
+  </view>
+
+  <!-- 正在播放 -->
+  <view class="current-video-wrap" wx:if="{{currentVideo}}">
+    <video
+      id="mainVideo"
+      class="main-video"
+      src="{{currentVideo.src}}"
+      title="{{currentVideo.title}}"
+      poster="{{currentVideo.poster}}"
+      controls
+      show-fullscreen-btn
+      show-play-btn
+      enable-progress-gesture
+      object-fit="contain"
+      bindplay="onVideoPlay"
+      bindended="onVideoEnd"
+    ></video>
+    <view class="current-title">{{currentVideo.title}}</view>
+  </view>
+
+  <!-- 视频列表 -->
+  <view class="video-list">
+    <view
+      class="video-item {{currentVideo && currentVideo.id === item.id ? 'active' : ''}}"
+      wx:for="{{videos}}"
+      wx:key="id"
+      bindtap="playVideo"
+      data-index="{{index}}"
+    >
+      <view class="video-thumb-wrap">
+        <image class="video-thumb" src="{{item.poster || ''}}" mode="aspectFill" wx:if="{{item.poster}}"></image>
+        <view class="video-thumb video-thumb-placeholder" wx:else>
+          <text>▶</text>
+        </view>
+        <view class="play-icon" wx:if="{{currentVideo && currentVideo.id === item.id}}">▶</view>
+      </view>
+      <view class="video-meta">
+        <view class="video-name">{{item.title}}</view>
+        <view class="video-duration">{{item.duration || ''}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{!videos || videos.length === 0}}">
+    <text>暂无视频，敬请期待</text>
+  </view>
+
+</view>

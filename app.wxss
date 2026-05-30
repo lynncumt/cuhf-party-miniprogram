@@ -1,0 +1,131 @@
+/* 全局样式 */
+page {
+  background-color: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+/* 通用容器 */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 卡片样式 */
+.card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #CC0000;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 2rpx solid #CC0000;
+}
+
+/* 段落文字 */
+.paragraph {
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 1.8;
+  margin-bottom: 16rpx;
+}
+
+/* 红色主题按钮 */
+.btn-primary {
+  background: #CC0000;
+  color: #ffffff;
+  border-radius: 8rpx;
+  padding: 20rpx 40rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+/* 加载中 */
+.loading {
+  text-align: center;
+  padding: 60rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+/* 分割线 */
+.divider {
+  height: 1rpx;
+  background: #EEEEEE;
+  margin: 20rpx 0;
+}
+
+/* 返回按钮已由导航栏提供，无需额外实现 */
+
+/* 红色标题栏 */
+.section-header {
+  background: linear-gradient(135deg, #CC0000, #FF3333);
+  color: #ffffff;
+  padding: 20rpx 30rpx;
+  border-radius: 12rpx 12rpx 0 0;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* 内容区域 */
+.section-body {
+  background: #ffffff;
+  padding: 24rpx;
+  border-radius: 0 0 12rpx 12rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 列表项 */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item .arrow {
+  margin-left: auto;
+  color: #CCCCCC;
+  font-size: 28rpx;
+}
+
+/* 标签 */
+.tag {
+  display: inline-block;
+  background: #FFF0F0;
+  color: #CC0000;
+  border: 1rpx solid #FFCCCC;
+  border-radius: 6rpx;
+  padding: 4rpx 12rpx;
+  font-size: 22rpx;
+  margin-right: 8rpx;
+}
+
+/* 图片占位 */
+.img-placeholder {
+  width: 100%;
+  background: linear-gradient(135deg, #CC0000 0%, #FF6666 100%);
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 28rpx;
+}

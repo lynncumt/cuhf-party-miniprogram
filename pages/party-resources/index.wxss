@@ -1,0 +1,29 @@
+.header-card {
+  background: linear-gradient(135deg, #8B0000, #CC0000);
+  border-radius: 16rpx; padding: 30rpx; margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(204,0,0,0.3);
+}
+.header-title { font-size: 36rpx; font-weight: bold; color: #FFD700; margin-bottom: 16rpx; }
+.header-card .rich-content { color: rgba(255,255,255,0.9); font-size: 26rpx; line-height: 1.8; }
+
+.resource-section {
+  background: #fff; border-radius: 16rpx;
+  margin-bottom: 20rpx; overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+}
+
+.resource-header {
+  background: linear-gradient(90deg, #CC0000, #FF4444);
+  padding: 24rpx 28rpx; display: flex; align-items: center; gap: 16rpx;
+}
+.resource-icon { font-size: 44rpx; }
+.resource-title { font-size: 32rpx; font-weight: bold; color: #fff; }
+
+.resource-body { padding: 24rpx 28rpx; }
+.rich-content { font-size: 28rpx; color: #555; line-height: 1.8; }
+
+.resource-tags { display: flex; flex-wrap: wrap; gap: 10rpx; margin-top: 16rpx; }
+.tag {
+  background: #FFF0F0; color: #CC0000; border: 1rpx solid #FFCCCC;
+  border-radius: 6rpx; padding: 6rpx 16rpx; font-size: 22rpx;
+}

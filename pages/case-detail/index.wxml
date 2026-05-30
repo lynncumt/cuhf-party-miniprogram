@@ -1,0 +1,16 @@
+<!-- 案例详情 -->
+<view class="container">
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <view wx:else>
+    <image class="cover-img" src="{{caseData.coverImage || ''}}" mode="aspectFill" wx:if="{{caseData.coverImage}}"></image>
+    <view class="meta-bar">
+      <text class="date">{{caseData.date}}</text>
+      <view class="tags">
+        <view class="tag" wx:for="{{caseData.tags}}" wx:key="index" wx:for-item="tag">{{tag}}</view>
+      </view>
+    </view>
+    <view class="case-title">{{caseData.title}}</view>
+    <view class="divider"></view>
+    <rich-text nodes="{{caseData.content || caseData.summary}}" class="rich-content"></rich-text>
+  </view>
+</view>

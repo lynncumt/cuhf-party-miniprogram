@@ -1,0 +1,49 @@
+.college-banner, .college-banner-placeholder {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+}
+
+.college-banner-placeholder {
+  background: linear-gradient(135deg, #CC0000, #FF8866);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.rich-content { font-size: 28rpx; color: #555; line-height: 1.8; }
+
+.section-title {
+  font-size: 30rpx; font-weight: bold; color: #CC0000;
+  margin: 20rpx 0 12rpx;
+  padding-left: 14rpx; border-left: 5rpx solid #CC0000;
+}
+
+.major-list {
+  background: #ffffff; border-radius: 12rpx;
+  padding: 20rpx 24rpx; margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.major-item {
+  display: flex; align-items: center;
+  padding: 14rpx 0; border-bottom: 1rpx solid #F5F5F5;
+}
+.major-item:last-child { border-bottom: none; }
+
+.major-dot {
+  width: 12rpx; height: 12rpx; border-radius: 50%;
+  background: #CC0000; margin-right: 16rpx; flex-shrink: 0;
+}
+
+.major-name { font-size: 28rpx; color: #333; }
+
+.dept-list { background: #fff; border-radius: 12rpx; overflow: hidden; margin-bottom: 20rpx; box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05); }
+.dept-item { padding: 24rpx; border-bottom: 1rpx solid #F0F0F0; }
+.dept-item:last-child { border-bottom: none; }
+.dept-name { font-size: 30rpx; font-weight: bold; color: #CC0000; margin-bottom: 8rpx; }
+.dept-desc { font-size: 26rpx; color: #666; line-height: 1.6; }

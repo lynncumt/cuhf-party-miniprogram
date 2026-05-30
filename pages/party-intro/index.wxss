@@ -1,0 +1,52 @@
+.full-img { width: 100%; height: 300rpx; border-radius: 10rpx; margin-bottom: 20rpx; object-fit: cover; }
+.rich-content { font-size: 28rpx; color: #555; line-height: 1.8; }
+
+.section-h2 {
+  font-size: 32rpx; font-weight: bold; color: #CC0000;
+  margin-bottom: 24rpx; padding-bottom: 14rpx;
+  border-bottom: 2rpx solid #FFDDDD;
+}
+
+.needs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.need-item {
+  background: linear-gradient(135deg, #FFF5F5, #FFEEEE);
+  border: 1rpx solid #FFCCCC;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.need-num {
+  width: 44rpx; height: 44rpx;
+  background: #CC0000; color: #FFD700;
+  border-radius: 50%; font-size: 24rpx; font-weight: bold;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.need-text { font-size: 26rpx; color: #444; line-height: 1.4; }
+
+.project-list { }
+.project-item {
+  display: flex; align-items: flex-start;
+  padding: 24rpx 0; border-bottom: 1rpx solid #F0F0F0;
+}
+.project-item:last-child { border-bottom: none; }
+
+.project-num {
+  width: 60rpx; height: 60rpx;
+  background: linear-gradient(135deg, #CC0000, #FF4444);
+  color: #FFD700; font-size: 22rpx; font-weight: bold;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-right: 20rpx;
+}
+
+.project-title { font-size: 30rpx; font-weight: bold; color: #CC0000; margin-bottom: 8rpx; }
+.project-desc { font-size: 26rpx; color: #666; line-height: 1.6; }
