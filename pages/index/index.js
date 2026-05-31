@@ -1,7 +1,9 @@
 const db = wx.cloud.database()
+const { getTempUrls, resolveImageFields } = require('../../utils/cloudImage')
 
 Page({
   data: {
+    bannerImage: '',
     newsList: [
       { title: '合肥城市学院与多家企业签署校企党建互助协议', _id: '' },
       { title: '校企联建活动——"青年党员共学党史"顺利举行', _id: '' },
@@ -11,7 +13,23 @@ Page({
   },
 
   onLoad() {
+    this.loadBanner()
     this.loadNews()
+  },
+
+  loadBanner() {
+    db.collection('school_overview').limit(1).get()
+      .then(res => {
+        if (res.data && res.data.length > 0) {
+          const src = res.data[0].bannerImage || ''
+          if (src.startsWith('cloud://')) {
+            getTempUrls(src).then(url => this.setData({ bannerImage: url }))
+          } else if (src) {
+            this.setData({ bannerImage: src })
+          }
+        }
+      })
+      .catch(() => {})
   },
 
   onShow() {
@@ -21,7 +39,6 @@ Page({
   },
 
   loadNews() {
-    const { resolveImageFields } = require('../../utils/cloudImage')
     db.collection('cases')
       .orderBy('createTime', 'desc')
       .limit(10)
