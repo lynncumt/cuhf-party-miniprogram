@@ -1,61 +1,84 @@
-<!-- 首页 -->
+<!-- 首页 - 严格按照示意图布局 -->
 <view class="index-page">
 
   <!-- 顶部 Banner -->
-  <view class="banner">
-    <view class="banner-content">
-      <view class="banner-title">合肥城市学院</view>
-      <view class="banner-subtitle">校企党建互助平台</view>
-      <view class="banner-slogan">协力同心强党建  校企同频谱新篇</view>
-    </view>
-    <view class="banner-emblem">党</view>
-  </view>
-
-  <!-- 合城动态滚动栏 -->
-  <view class="news-ticker">
-    <view class="news-ticker-label">合城动态</view>
-    <swiper class="news-swiper" autoplay="{{true}}" interval="3000" vertical="{{true}}" circular="{{true}}">
-      <swiper-item wx:for="{{newsList}}" wx:key="index">
-        <view class="news-swiper-item" bindtap="goToCase" data-id="{{item._id}}">{{item.title}}</view>
-      </swiper-item>
-    </swiper>
-  </view>
-
-  <!-- 7大主要功能模块 -->
-  <view class="module-grid">
-    <view class="module-card" bindtap="goToPage" data-path="/pages/school-overview/index">
-      <view class="module-icon school-icon">🏫</view>
-      <view class="module-name">学校概况</view>
-    </view>
-    <view class="module-card" bindtap="goToPage" data-path="/pages/party-intro/index">
-      <view class="module-icon party-icon">🤝</view>
-      <view class="module-name">校企党建互助简介</view>
-    </view>
-    <view class="module-card" bindtap="goToPage" data-path="/pages/party-resources/index">
-      <view class="module-icon resource-icon">📚</view>
-      <view class="module-name">学校党建思政资源</view>
-    </view>
-    <view class="module-card" bindtap="goToPage" data-path="/pages/expert-db/index">
-      <view class="module-icon expert-icon">👨‍🏫</view>
-      <view class="module-name">党建思政专家库</view>
-    </view>
-    <view class="module-card" bindtap="goToPage" data-path="/pages/course-db/index">
-      <view class="module-icon course-icon">🎓</view>
-      <view class="module-name">党建思政精品课程库</view>
-    </view>
-    <view class="module-card" bindtap="goToPage" data-path="/pages/cases/index">
-      <view class="module-icon case-icon">📋</view>
-      <view class="module-name">校企党建互助案例采撷</view>
-    </view>
-    <view class="module-card module-card-full" bindtap="goToPage" data-path="/pages/contact/index">
-      <view class="module-icon contact-icon">📞</view>
-      <view class="module-name">党建互助 · 联系我们</view>
+  <view class="banner-wrap">
+    <image
+      class="banner-img"
+      src="{{bannerImage}}"
+      mode="aspectFill"
+      wx:if="{{bannerImage}}"
+    ></image>
+    <view class="banner-default" wx:else>
+      <view class="banner-logo-area">
+        <view class="banner-logo">合肥城市学院</view>
+        <view class="banner-logo-en">HEFEI CITY UNIVERSITY</view>
+      </view>
+      <view class="banner-slogan-area">
+        <view class="banner-slogan">协力同心强党建  校企同频谱新篇</view>
+      </view>
     </view>
   </view>
 
-  <!-- 底部说明 -->
-  <view class="footer-note">
-    <text>合肥城市学院 校企党建互助平台</text>
+  <!-- 7大功能模块：第一行4个 + 第二行3个 -->
+  <view class="module-wrap">
+    <!-- 第一行：4个模块 -->
+    <view class="module-row">
+      <view class="module-item" bindtap="goToPage" data-path="/pages/school-overview/index">
+        <text>合肥城市学院概况</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/party-intro/index">
+        <text>校企党建互助简介</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/party-resources/index">
+        <text>学校党建思政资源</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/expert-db/index">
+        <text>学校党建思政专家库</text>
+      </view>
+    </view>
+    <!-- 第二行：3个模块 -->
+    <view class="module-row">
+      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/course-db/index">
+        <text>党建思政精品课程库</text>
+      </view>
+      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/cases/index">
+        <text>校企党建互助案例采撷</text>
+      </view>
+      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/contact/index">
+        <text>党建互助-联系我们</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合城动态 -->
+  <view class="news-section">
+    <view class="news-section-title">合城动态</view>
+    <view class="news-list">
+      <view
+        class="news-item"
+        wx:for="{{newsList}}"
+        wx:key="_id"
+        bindtap="goToCase"
+        data-id="{{item._id}}"
+      >
+        <view class="news-text-wrap">
+          <text class="news-title">{{item.title}}</text>
+          <text class="news-date">{{item.date}}</text>
+        </view>
+        <view class="news-img-wrap">
+          <image
+            class="news-thumb"
+            src="{{item.coverImage}}"
+            mode="aspectFill"
+            wx:if="{{item.coverImage}}"
+          ></image>
+          <view class="news-thumb-placeholder" wx:else>
+            <text class="placeholder-text">图</text>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 
 </view>

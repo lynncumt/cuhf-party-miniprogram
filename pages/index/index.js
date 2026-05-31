@@ -21,13 +21,16 @@ Page({
   },
 
   loadNews() {
+    const { resolveImageFields } = require('../../utils/cloudImage')
     db.collection('cases')
       .orderBy('createTime', 'desc')
-      .limit(5)
+      .limit(10)
       .get()
       .then(res => {
         if (res.data && res.data.length > 0) {
-          this.setData({ newsList: res.data })
+          resolveImageFields(res.data, ['coverImage']).then(newsList => {
+            this.setData({ newsList })
+          })
         }
       })
       .catch(() => {})
