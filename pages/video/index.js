@@ -1,22 +1,11 @@
 const db = wx.cloud.database()
+const { resolveImageFields } = require('../../utils/cloudImage')
 
 Page({
   data: {
     videos: [
-      {
-        id: 'v1',
-        title: '合肥城市学院学校宣传片',
-        src: '请在云数据库中添加视频地址',
-        poster: '',
-        duration: '5分钟'
-      },
-      {
-        id: 'v2',
-        title: '合肥城市学院校园风光展示',
-        src: '请在云数据库中添加视频地址',
-        poster: '',
-        duration: '3分钟'
-      }
+      { id: 'v1', title: '合肥城市学院学校宣传片', src: '', poster: '', duration: '5分钟' },
+      { id: 'v2', title: '合肥城市学院校园风光展示', src: '', poster: '', duration: '3分钟' }
     ],
     currentVideo: null
   },
@@ -34,14 +23,11 @@ Page({
   loadVideos() {
     db.collection('videos').orderBy('sort', 'asc').get()
       .then(res => {
-        if (res.data && res.data.length > 0) {
-          this.setData({
-            videos: res.data,
-            currentVideo: res.data[0]
-          })
-        } else {
-          this.setData({ currentVideo: this.data.videos[0] })
-        }
+        const raw = res.data && res.data.length > 0 ? res.data : this.data.videos
+        // 同时转换封面图和视频文件（src 也可能是 cloud://）
+        return resolveImageFields(raw, ['poster', 'src']).then(videos => {
+          this.setData({ videos, currentVideo: videos[0] })
+        })
       })
       .catch(() => {
         this.setData({ currentVideo: this.data.videos[0] })

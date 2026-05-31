@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+const { getTempUrls, resolveImageFields } = require('../../utils/cloudImage')
 
 Page({
   data: {
@@ -21,7 +22,14 @@ Page({
     db.collection('school_overview').limit(1).get()
       .then(res => {
         if (res.data && res.data.length > 0) {
-          this.setData({ overview: res.data[0] })
+          const overview = res.data[0]
+          if (overview.bannerImage && overview.bannerImage.startsWith('cloud://')) {
+            getTempUrls(overview.bannerImage).then(url => {
+              this.setData({ overview: Object.assign({}, overview, { bannerImage: url }) })
+            })
+          } else {
+            this.setData({ overview })
+          }
         }
       })
       .catch(() => {})
@@ -31,7 +39,9 @@ Page({
     db.collection('colleges').orderBy('sort', 'asc').get()
       .then(res => {
         if (res.data && res.data.length > 0) {
-          this.setData({ colleges: res.data })
+          resolveImageFields(res.data, ['bannerImage']).then(colleges => {
+            this.setData({ colleges })
+          })
         }
       })
       .catch(() => {})

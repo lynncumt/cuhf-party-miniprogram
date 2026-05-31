@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+const { getTempUrls } = require('../../utils/cloudImage')
 
 Page({
   data: {
@@ -30,11 +31,19 @@ Page({
       .then(res => {
         if (res.data && res.data.length > 0) {
           const d = res.data[0]
-          this.setData({
+          const update = () => this.setData({
             intro: d,
             sixNeeds: d.sixNeeds || this.data.sixNeeds,
             projects: d.projects || this.data.projects
           })
+          if (d.bannerImage && d.bannerImage.startsWith('cloud://')) {
+            getTempUrls(d.bannerImage).then(url => {
+              d.bannerImage = url
+              update()
+            })
+          } else {
+            update()
+          }
         }
       })
       .catch(() => {})

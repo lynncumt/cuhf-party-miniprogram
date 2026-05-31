@@ -1,5 +1,6 @@
 const db = wx.cloud.database()
 const PAGE_SIZE = 10
+const { resolveImageFields } = require('../../utils/cloudImage')
 
 Page({
   data: {
@@ -26,13 +27,11 @@ Page({
       .limit(PAGE_SIZE)
       .get()
       .then(res => {
-        const experts = this.data.page === 0
+        const raw = this.data.page === 0
           ? (res.data.length > 0 ? res.data : this.data.defaultExperts)
           : [...this.data.experts, ...res.data]
-        this.setData({
-          loading: false,
-          experts,
-          hasMore: res.data.length === PAGE_SIZE
+        return resolveImageFields(raw, ['avatar']).then(experts => {
+          this.setData({ loading: false, experts, hasMore: res.data.length === PAGE_SIZE })
         })
       })
       .catch(() => {
