@@ -1,4 +1,4 @@
-<!-- 首页 - 严格按照示意图布局 -->
+<!-- 首页 -->
 <view class="index-page">
 
   <!-- 顶部 Banner -->
@@ -20,33 +20,57 @@
     </view>
   </view>
 
-  <!-- 7大功能模块：第一行4个 + 第二行3个 -->
+  <!-- 功能导航 -->
   <view class="module-wrap">
-    <!-- 第一行：4个模块 -->
+    <view class="module-wrap-title">功能导航</view>
+
+    <!-- 第一行：4个 -->
     <view class="module-row">
       <view class="module-item" bindtap="goToPage" data-path="/pages/school-overview/index">
-        <text>合肥城市学院概况</text>
+        <view class="module-icon-wrap">
+          <text class="module-icon">🏫</text>
+        </view>
+        <text class="module-name">学校概况</text>
       </view>
       <view class="module-item" bindtap="goToPage" data-path="/pages/party-intro/index">
-        <text>校企党建互助简介</text>
+        <view class="module-icon-wrap">
+          <text class="module-icon">🤝</text>
+        </view>
+        <text class="module-name">党建介绍</text>
       </view>
       <view class="module-item" bindtap="goToPage" data-path="/pages/party-resources/index">
-        <text>学校党建思政资源</text>
+        <view class="module-icon-wrap">
+          <text class="module-icon">📚</text>
+        </view>
+        <text class="module-name">党建资源</text>
       </view>
       <view class="module-item" bindtap="goToPage" data-path="/pages/expert-db/index">
-        <text>学校党建思政专家库</text>
+        <view class="module-icon-wrap">
+          <text class="module-icon">👨‍🏫</text>
+        </view>
+        <text class="module-name">专家库</text>
       </view>
     </view>
-    <!-- 第二行：3个模块 -->
+
+    <!-- 第二行：3个 -->
     <view class="module-row">
-      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/course-db/index">
-        <text>党建思政精品课程库</text>
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/course-db/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">🎓</text>
+        </view>
+        <text class="module-name">精品课程</text>
       </view>
-      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/cases/index">
-        <text>校企党建互助案例采撷</text>
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/cases/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">📋</text>
+        </view>
+        <text class="module-name">案例采撷</text>
       </view>
-      <view class="module-item module-item-3" bindtap="goToPage" data-path="/pages/contact/index">
-        <text>党建互助-联系我们</text>
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/contact/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">📞</text>
+        </view>
+        <text class="module-name">联系我们</text>
       </view>
     </view>
   </view>
