@@ -1,0 +1,36 @@
+<!-- 校企党建互助简介 -->
+<view class="container">
+
+  <!-- 时代背景 -->
+  <view class="card">
+    <view class="page-title">校企党建共建时代背景</view>
+    <image class="full-img" src="{{intro.bannerImage || ''}}" mode="aspectFill" wx:if="{{intro.bannerImage}}"></image>
+    <rich-text nodes="{{intro.background || defaultBackground}}" class="rich-content"></rich-text>
+  </view>
+
+  <!-- 六大需求 -->
+  <view class="card">
+    <view class="section-h2">解决企业党建六大需求</view>
+    <view class="needs-grid">
+      <view class="need-item" wx:for="{{sixNeeds}}" wx:key="index">
+        <view class="need-num">{{index + 1}}</view>
+        <view class="need-text">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 五大项目 -->
+  <view class="card">
+    <view class="section-h2">校企党建互助共建项目</view>
+    <view class="project-list">
+      <view class="project-item" wx:for="{{projects}}" wx:key="index">
+        <view class="project-num">{{item.num}}</view>
+        <view class="project-info">
+          <view class="project-title">{{item.title}}</view>
+          <view class="project-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

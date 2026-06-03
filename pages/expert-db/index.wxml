@@ -1,0 +1,32 @@
+<!-- 党建思政专家库 -->
+<view class="container">
+
+  <view class="db-header">
+    <view class="db-title">党建思政专家库</view>
+    <view class="db-subtitle">汇聚优质党建思政专家资源，为校企联建提供智力支持</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view class="expert-list" wx:else>
+    <view class="expert-card" wx:for="{{experts}}" wx:key="_id">
+      <view class="expert-avatar-wrap">
+        <image class="expert-avatar" src="{{item.avatar || ''}}" mode="aspectFill" wx:if="{{item.avatar}}"></image>
+        <view class="expert-avatar-placeholder" wx:else>
+          <text>{{item.name ? item.name.slice(0,1) : '专'}}</text>
+        </view>
+      </view>
+      <view class="expert-info">
+        <view class="expert-name">{{item.name}}</view>
+        <view class="expert-title">{{item.title}}</view>
+        <view class="expert-tags">
+          <view class="tag" wx:for="{{item.expertise}}" wx:key="index" wx:for-item="tag">{{tag}}</view>
+        </view>
+        <view class="expert-intro">{{item.intro}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="load-more" wx:if="{{hasMore}}" bindtap="loadMore">加载更多</view>
+
+</view>

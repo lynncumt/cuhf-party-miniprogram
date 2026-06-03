@@ -1,0 +1,108 @@
+<!-- 首页 -->
+<view class="index-page">
+
+  <!-- 顶部 Banner -->
+  <view class="banner-wrap">
+    <image
+      class="banner-img"
+      src="{{bannerImage}}"
+      mode="aspectFill"
+      wx:if="{{bannerImage}}"
+    ></image>
+    <view class="banner-default" wx:else>
+      <view class="banner-logo-area">
+        <view class="banner-logo">合肥城市学院</view>
+        <view class="banner-logo-en">HEFEI CITY UNIVERSITY</view>
+      </view>
+      <view class="banner-slogan-area">
+        <view class="banner-slogan">协力同心强党建  校企同频谱新篇</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能导航 -->
+  <view class="module-wrap">
+    <view class="module-wrap-title">功能导航</view>
+
+    <!-- 第一行：4个 -->
+    <view class="module-row">
+      <view class="module-item" bindtap="goToPage" data-path="/pages/school-overview/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">🏫</text>
+        </view>
+        <text class="module-name">学校概况</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/party-intro/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">🤝</text>
+        </view>
+        <text class="module-name">党建介绍</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/party-resources/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">📚</text>
+        </view>
+        <text class="module-name">党建资源</text>
+      </view>
+      <view class="module-item" bindtap="goToPage" data-path="/pages/expert-db/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">👨‍🏫</text>
+        </view>
+        <text class="module-name">专家库</text>
+      </view>
+    </view>
+
+    <!-- 第二行：3个 -->
+    <view class="module-row">
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/course-db/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">🎓</text>
+        </view>
+        <text class="module-name">精品课程</text>
+      </view>
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/cases/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">📋</text>
+        </view>
+        <text class="module-name">案例采撷</text>
+      </view>
+      <view class="module-item-3" bindtap="goToPage" data-path="/pages/contact/index">
+        <view class="module-icon-wrap">
+          <text class="module-icon">📞</text>
+        </view>
+        <text class="module-name">联系我们</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合城动态 -->
+  <view class="news-section">
+    <view class="news-section-title">合城动态</view>
+    <view class="news-list">
+      <view
+        class="news-item"
+        wx:for="{{newsList}}"
+        wx:key="_id"
+        bindtap="goToCase"
+        data-id="{{item._id}}"
+      >
+        <view class="news-text-wrap">
+          <text class="news-title">{{item.title}}</text>
+          <text class="news-date">{{item.date}}</text>
+        </view>
+        <view class="news-img-wrap">
+          <image
+            class="news-thumb"
+            src="{{item.coverImage}}"
+            mode="aspectFill"
+            wx:if="{{item.coverImage}}"
+          ></image>
+          <view class="news-thumb-placeholder" wx:else>
+            <text class="placeholder-text">图</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

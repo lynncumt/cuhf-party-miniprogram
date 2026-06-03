@@ -1,0 +1,23 @@
+<!-- 党建思政精品课程库 -->
+<view class="container">
+
+  <view class="db-header">
+    <view class="db-title">党建思政精品课程库</view>
+    <view class="db-subtitle">系统化课程体系，满足企业多元党建需求</view>
+  </view>
+
+  <view class="category-section" wx:for="{{categories}}" wx:key="id">
+    <view class="category-header">
+      <view class="cat-num">{{item.roman}}</view>
+      <view class="cat-title">{{item.title}}</view>
+    </view>
+    <view class="course-list">
+      <view class="course-item" wx:for="{{item.courses}}" wx:key="index" wx:for-item="course">
+        <view class="course-num">{{index + 1}}.</view>
+        <view class="course-name">{{course.name}}</view>
+        <view class="course-duration" wx:if="{{course.duration}}">{{course.duration}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

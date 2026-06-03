@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/school-overview/index",
+    "pages/college-detail/index",
+    "pages/party-intro/index",
+    "pages/party-resources/index",
+    "pages/expert-db/index",
+    "pages/course-db/index",
+    "pages/cases/index",
+    "pages/case-detail/index",
+    "pages/contact/index",
+    "pages/campus-address/index",
+    "pages/video/index",
+    "pages/media-links/index",
+    "pages/webview/index"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#CC0000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab_home.png",
+        "selectedIconPath": "images/tab_home_active.png"
+      },
+      {
+        "pagePath": "pages/campus-address/index",
+        "text": "校区地址",
+        "iconPath": "images/tab_address.png",
+        "selectedIconPath": "images/tab_address_active.png"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "text": "视见合城",
+        "iconPath": "images/tab_video.png",
+        "selectedIconPath": "images/tab_video_active.png"
+      },
+      {
+        "pagePath": "pages/media-links/index",
+        "text": "媒体链接",
+        "iconPath": "images/tab_media.png",
+        "selectedIconPath": "images/tab_media_active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#CC0000",
+    "navigationBarTitleText": "合肥城市学院校企党建互助",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F5F5"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于显示校区地图位置"
+    }
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
