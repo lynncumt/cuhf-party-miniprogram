@@ -74,8 +74,16 @@ Page({
     const { type, url, appid, path, name } = e.currentTarget.dataset
 
     if (type === 'web' && url && !url.startsWith('请')) {
-      wx.navigateTo({
-        url: `/pages/webview/index?url=${encodeURIComponent(url)}&title=${encodeURIComponent(name)}`
+      wx.setClipboardData({
+        data: url,
+        success: () => {
+          wx.showModal({
+            title: '链接已复制',
+            content: '请在手机浏览器中粘贴打开：\n' + url,
+            showCancel: false,
+            confirmText: '知道了'
+          })
+        }
       })
     } else if (type === 'wechat' && appid) {
       wx.navigateToMiniProgram({ appId: appid, path: path })
