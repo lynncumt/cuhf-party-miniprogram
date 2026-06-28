@@ -2,43 +2,32 @@
 <view class="container">
 
   <view class="media-header">
-    <view class="media-title">📡 学校媒体链接</view>
-    <view class="media-desc">关注合肥城市学院，获取最新动态资讯</view>
+    <view class="media-title">学校媒体链接</view>
   </view>
 
   <view class="media-list">
     <view
-      class="media-item"
+      class="media-row"
       wx:for="{{mediaLinks}}"
       wx:key="id"
-      bindtap="openLink"
-      data-type="{{item.type}}"
-      data-url="{{item.url}}"
-      data-appid="{{item.appid}}"
-      data-path="{{item.path}}"
-      data-name="{{item.name}}"
     >
-      <view class="media-icon-wrap" style="background: {{item.bgColor}}">
-        <text class="media-icon">{{item.icon}}</text>
+      <view class="media-name">{{item.name}}</view>
+      <view class="media-qr-wrap">
+        <image
+          class="media-qr-img"
+          src="{{item.qrImage}}"
+          mode="aspectFit"
+          wx:if="{{item.qrImage}}"
+          bindtap="previewQr"
+          data-url="{{item.qrImage}}"
+        ></image>
+        <view class="media-qr-placeholder" wx:else>
+          <text>二维码</text>
+        </view>
       </view>
-      <view class="media-info">
-        <view class="media-name">{{item.name}}</view>
-        <view class="media-handle">{{item.handle || item.url}}</view>
-      </view>
-      <view class="media-arrow">›</view>
     </view>
   </view>
 
-  <view class="qrcode-section">
-    <view class="qr-title">扫码关注</view>
-    <view class="qr-grid">
-      <view class="qr-item" wx:for="{{qrcodes}}" wx:key="id">
-        <view class="qr-img-placeholder">
-          <text>{{item.icon}}</text>
-        </view>
-        <view class="qr-name">{{item.name}}</view>
-      </view>
-    </view>
-  </view>
+  <view class="media-footer">欢迎关注！</view>
 
 </view>
