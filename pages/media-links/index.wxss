@@ -32,16 +32,19 @@
 .media-arrow { color: #CCCCCC; font-size: 44rpx; font-weight: 300; }
 
 .qrcode-card {
-  display: flex; align-items: center; justify-content: flex-start; gap: 30rpx;
+  display: flex; align-items: center;
 }
-.qr-row-name { font-size: 30rpx; font-weight: bold; color: #222; flex-shrink: 0; }
+.qr-row-name {
+  font-size: 30rpx; font-weight: bold; color: #222;
+  width: 200rpx; flex-shrink: 0;
+}
 
 .qr-img-wrap {
-  width: 140rpx; height: 140rpx; flex-shrink: 0;
+  width: 180rpx; height: 180rpx; flex-shrink: 0;
 }
-.qr-img { width: 140rpx; height: 140rpx; display: block; }
+.qr-img { width: 180rpx; height: 180rpx; display: block; }
 .qr-img-placeholder {
-  width: 140rpx; height: 140rpx; border-radius: 12rpx;
+  width: 180rpx; height: 180rpx; border-radius: 12rpx;
   background: linear-gradient(135deg, #F5F5F5, #EEEEEE);
   border: 2rpx dashed #CCCCCC;
   display: flex; align-items: center; justify-content: center;
