@@ -6,31 +6,6 @@
 .media-title { font-size: 36rpx; font-weight: bold; color: #FFD700; margin-bottom: 8rpx; }
 .media-desc { font-size: 26rpx; color: rgba(255,255,255,0.85); }
 
-.media-list {
-  background: #fff; border-radius: 16rpx; overflow: hidden;
-  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06); margin-bottom: 20rpx;
-}
-
-.media-item {
-  display: flex; align-items: center; padding: 24rpx 28rpx;
-  gap: 20rpx;
-}
-
-.media-icon-wrap {
-  width: 88rpx; height: 88rpx; border-radius: 22rpx;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.media-icon { font-size: 48rpx; }
-
-.media-info { flex: 1; overflow: hidden; }
-.media-name { font-size: 30rpx; font-weight: bold; color: #222; margin-bottom: 6rpx; }
-.media-handle {
-  font-size: 24rpx; color: #888;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-
-.media-arrow { color: #CCCCCC; font-size: 44rpx; font-weight: 300; }
-
 .qrcode-card {
   display: flex; align-items: center;
 }
