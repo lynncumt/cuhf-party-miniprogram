@@ -2,32 +2,42 @@
 <view class="container">
 
   <view class="media-header">
-    <view class="media-title">学校媒体链接</view>
+    <view class="media-title">📡 学校媒体链接</view>
+    <view class="media-desc">关注合肥城市学院，获取最新动态资讯</view>
   </view>
 
+  <!-- 校园官网：复制链接 -->
   <view class="media-list">
     <view
-      class="media-row"
-      wx:for="{{mediaLinks}}"
-      wx:key="id"
+      class="media-item"
+      bindtap="copyLink"
+      data-url="{{website.url}}"
     >
-      <view class="media-name">{{item.name}}</view>
-      <view class="media-qr-wrap">
-        <image
-          class="media-qr-img"
-          src="{{item.qrImage}}"
-          mode="aspectFit"
-          wx:if="{{item.qrImage}}"
-          bindtap="previewQr"
-          data-url="{{item.qrImage}}"
-        ></image>
-        <view class="media-qr-placeholder" wx:else>
-          <text>二维码</text>
-        </view>
+      <view class="media-icon-wrap" style="background: #E3F2FD">
+        <text class="media-icon">🌐</text>
       </view>
+      <view class="media-info">
+        <view class="media-name">校园官网</view>
+        <view class="media-handle">{{website.url}}</view>
+      </view>
+      <view class="media-arrow">›</view>
     </view>
   </view>
 
-  <view class="media-footer">欢迎关注！</view>
+  <!-- 微信公众号 + 抖音官号：二维码 -->
+  <view class="card qrcode-card" wx:for="{{qrLinks}}" wx:key="id">
+    <view class="qr-row-name">{{item.name}}</view>
+    <view class="qr-img-wrap" bindtap="previewQr" data-url="{{item.qrImage}}">
+      <image
+        class="qr-img"
+        src="{{item.qrImage}}"
+        mode="aspectFit"
+        wx:if="{{item.qrImage}}"
+      ></image>
+      <view class="qr-img-placeholder" wx:else>
+        <text>二维码</text>
+      </view>
+    </view>
+  </view>
 
 </view>
