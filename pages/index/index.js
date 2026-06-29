@@ -5,10 +5,10 @@ Page({
   data: {
     bannerImage: '',
     newsList: [
-      { title: '合肥城市学院与多家企业签署校企党建互助协议', _id: '' },
-      { title: '校企联建活动——"青年党员共学党史"顺利举行', _id: '' },
-      { title: '党建思政专家赴企业开展专题讲座活动', _id: '' },
-      { title: '校企党建互助项目年度总结大会圆满召开', _id: '' },
+      { title: '合肥城市学院与多家企业签署校企党建互助协议', date: '2025-06-01', _id: '' },
+      { title: '校企联建活动——"青年党员共学党史"顺利举行', date: '2025-05-20', _id: '' },
+      { title: '党建思政专家赴企业开展专题讲座活动', date: '2025-05-10', _id: '' },
+      { title: '校企党建互助项目年度总结大会圆满召开', date: '2025-04-28', _id: '' },
     ]
   },
 
@@ -40,7 +40,7 @@ Page({
 
   loadNews() {
     db.collection('cases')
-      .orderBy('createTime', 'desc')
+      .orderBy('date', 'desc')
       .limit(10)
       .get()
       .then(res => {
